@@ -1,0 +1,11 @@
+altair
+pandas
+streamlit
+pymongo
+plotly
+scipy
+matplotlib
+streamlit_extras
+streamlit_echarts
+pyecharts
+stylable_container
