@@ -9,7 +9,7 @@
 #define MQTT_PW "server123"
 
 IPAddress subnet(255, 255, 255, 0);
-IPAddress local_IP(192, 168, 1, 50);
+IPAddress local_IP(192, 168, 1, 49);
 IPAddress gateway(192, 168, 1, 1);
 
 // static variables

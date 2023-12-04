@@ -4,7 +4,7 @@ from fastapi_mqtt.config import MQTTConfig
 import time
 
 mqtt_config = MQTTConfig(
-    host="192.168.0.177",
+    host="192.168.1.50",
     port=1883,
     keepalive=600,
     username="admin",
@@ -42,15 +42,15 @@ async def message(client, topic, payload, qos, properties):
     
 @fast_mqtt.subscribe("/TGR_22/#")
 async def message_to_topic(client, topic, payload, qos, properties):
-    # message = payload.decode()
-    # jsondata = {
-    #     "station_id":"1",
-    #     "Date":"56",
-    #     "w_height":float(message),
-    #     "w_discharge":0
+    message = payload.decode()
+    jsondata = {
+        "station_id":"1",
+        "Date":"56",
+        "w_height":float(message),
+        "w_discharge":0
         
-    # }
-    # await add_water(jsondata)
+    }
+    await add_water(jsondata)
     print("Received message to specific topic: ", topic, payload.decode(), qos, properties)
 
 @fast_mqtt.on_disconnect()
